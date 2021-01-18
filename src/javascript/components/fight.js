@@ -51,12 +51,18 @@ export function getDamage(attacker, defender) {
 
 export function getHitPower(fighter) {
   // return hit power
-  let criticalHitChance = Math.floor(1 + Math.random() * 2);
+  let criticalHitChance = getRandomIntInclusive(1,2);
   return fighter.attack * criticalHitChance;
 }
 
 export function getBlockPower(fighter) {
   // return block power
-  let dodgeChance = Math.floor(1 + Math.random() * 2);
+  let dodgeChance = getRandomIntInclusive(1,2);
   return fighter.defense * dodgeChance;
+}
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min; 
 }
