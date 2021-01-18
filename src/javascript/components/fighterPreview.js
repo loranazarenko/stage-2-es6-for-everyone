@@ -11,7 +11,7 @@ export function createFighterPreview(fighter, position) {
   if (fighter) {
     const { name, health, attack, defense } = fighter;
     const imgElement = createFighterImage(fighter);
-    fighterElement.innerHTML = `'<img src="' + $img + '" />'; Name: ${name}<br> Health: ${health}<br> Attack: ${attack}<br> Defense: ${defense}<br>`;
+    fighterElement.innerHTML = `Name: ${name}<br> Health: ${health}<br> Attack: ${attack}<br> Defense: ${defense}<br>`;
     
     fighterElement.append(imgElement);
   };
