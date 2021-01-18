@@ -49,6 +49,9 @@ export function getDamage(attacker, defender) {
   return ((getHitPower(attacker) - getBlockPower(defender)) > 0 ? (getHitPower(attacker) - getBlockPower(defender)) : 0);
 }
 
+function randomInteger(min, max) {
+  return Math.floor(min + Math.random() * (max - min + 1));;
+}
 export function getHitPower(fighter) {
   // return hit power
   let criticalHitChance = randomInteger(1, 2);
@@ -59,9 +62,4 @@ export function getBlockPower(fighter) {
   // return block power
   let dodgeChance = randomInteger(1, 2);
   return fighter.defense * dodgeChance;
-}
-
-function randomInteger(min, max) {
-  let rand = Math.floor(min + Math.random() * (max - min + 1));
-  return rand;
 }

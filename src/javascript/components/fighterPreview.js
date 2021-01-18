@@ -10,9 +10,12 @@ export function createFighterPreview(fighter, position) {
   // todo: show fighter info (image, name, health, etc.)
   if (fighter) {
     const { name, health, attack, defense } = fighter;
-    fighterElement.innerHTML = `Name: ${name}<br> Health: ${health}<br> Attack: ${attack}<br> Defense: ${defense}<br>`;
+    const imgElement = createFighterImage(fighter);
+    fighterElement.innerHTML = `'<img src="' + $img + '" />'; Name: ${name}<br> Health: ${health}<br> Attack: ${attack}<br> Defense: ${defense}<br>`;
+    
+    fighterElement.append(imgElement);
   };
-
+  
   return fighterElement;
 }
 
